@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "HTML to MD - Code Preview",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": [
+        "file:///*/*.html",
+        "http://*/*/*.html",
+        "https://*/*/*.html"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "libs/highlight.min.js",
+        "libs/java.min.js",
+        "highlight-runner.js"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "permissions": []
+}
